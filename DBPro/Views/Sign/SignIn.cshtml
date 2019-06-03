@@ -1,0 +1,79 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "SignIn";
+}
+@model SignViewModel;
+<h2>SignIn</h2>
+
+<form>
+
+    @using (Html.BeginForm("SignInHandle", "Sign", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <table>
+            <tr>
+                <td>Enter ID: </td>
+                <td> @Html.EditorFor(model => model.ID, new { htmlAttributes = new { @class = "form-control" } })</td>
+            </tr>
+            <tr>
+                <td>Enter Name: </td>
+                <!--<td>@Html.TextBox("password")</td>-->
+                <td> @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })</td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="SignIn"></td>
+            </tr>
+        </table>
+    }
+    @{
+        if (!string.IsNullOrEmpty(ViewBag.AlertMessage))
+        {
+            <script>alert("@ViewBag.AlertMessage");</script>
+        }
+    }
+    <!--
+        <table border="1" cellspacing="1" cellpadding="1" align="center" background="../../动态壁纸/壁纸2/preview.jpg">
+            <caption>
+                Sign In
+            </caption>
+            <tr>
+                <td width="100" align="right">
+                    mail：
+                </td>
+                <td width="150">
+                    <input type="text" name="uname" value="" />
+                </td>
+            </tr>
+
+
+            <tr>
+                <td width="100" align="right">
+                    password：
+                </td>
+                <td width="150">
+                    <input type="password" name="pwd" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name=" " value="sign in" />&nbsp;&nbsp;
+                    <input type="reset" name="" value="reset" />&nbsp;&nbsp;
+                    <input type="button" name="" value="back" />&nbsp;&nbsp;
+                </td>
+            </tr>
+            <!--
+                        <td width="100" align="right">
+                            自我介绍：
+                        </td>
+
+                        <td width="150">
+                            <textarea rows="4" cols="12"></textarea>
+                        </td>
+                    </tr>
+
+
+        </table>-->
+</form>

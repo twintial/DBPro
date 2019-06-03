@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<h2>SignUp</h2>
+
+<form>
+    <table border="1" cellspacing="1" cellpadding="1" align="center" background="../../动态壁纸/壁纸2/preview.jpg">
+        <caption>
+            Sign Up
+        </caption>
+        <tr>
+            <td width="100" align="right">
+                mail：
+            </td>
+            <td width="150">
+                <input type="text" name="uname" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td width="100" align="right">
+                nickname：
+            </td>
+            <td width="150">
+                <input type="text" name="uname" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                photo：
+            </td>
+            <td>
+                <input type="file" name="file" />
+            </td>
+        </tr>
+        <tr>
+            <td width="100" align="right">
+                password：
+            </td>
+            <td width="150">
+                <input type="password" name="pwd" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td width="100" align="right">
+                recomfirm password：
+            </td>
+            <td width="150">
+                <input type="password" name="pwd" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td width="100" align="right">
+                sex：
+            </td>
+            <td width="150">
+                <input type="radio" name="sex" id="s1" value="male" />
+                <label for="s1">male</label>
+                <input type="radio" name="sex" id="s2" value="female" />
+                <label for="s2">female</label>
+                <input type="radio" name="sex" id="s0" value="sex" />
+                <label for="s0">secret</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="100" align="right">
+                years：
+            </td>
+            <td width="150">
+                <select name="year">
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <td colspan="2" align="center">
+                <asp:Button type="submit" name=" " value="submit" asp-area ="" asp-controller="Home" asp-action="Index">submit</asp:Button>
+                <!--<asp:Button type="submit" name=" " value="submit" />&nbsp;&nbsp;-->
+                <input type="reset" name="" value="重置" />&nbsp;&nbsp;
+            </td>
+        </tr>
+        <!--
+                <td width="100" align="right">
+                    自我介绍：
+                </td>
+
+                <td width="150">
+                    <textarea rows="4" cols="12"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name=" " value="提交" />&nbsp;&nbsp;
+                    <input type="button" name="" value="是的" />&nbsp;&nbsp;
+                    <input type="reset" name="" value="重置" />&nbsp;&nbsp;
+                </td>
+            </tr>
+        -->
+    </table>
+</form>
