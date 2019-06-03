@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using DBPro.Database;
 using Oracle.ManagedDataAccess.Client;
 using DBPro.Entity;
+using Microsoft.Extensions.Logging.Console.Internal;
 
 namespace DBPro
 {
@@ -46,12 +47,15 @@ namespace DBPro
         }
         public static void Main(string[] args)
         {
+           //var t=new Image("1234", "Image\\test2.png");
             //CreateWebHostBuilder(args).Build().Run();
 
-
+            //Console.WriteLine(EntityRepositories.delObject(t)) ;
             //new Test.DBTest().testAccount();
+            //var t=EntityRepositories.getAllObject<Image>();
 
-            //Console.Read();
+
+           // Console.Read();
            /* List<Account> lst=DataBaseAccess.testQuery<Account>("select * from DBAccount");
             foreach(Account u in lst)
             {

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DBPro.Entity;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -77,5 +78,6 @@ namespace DBPro.Database
             pool.releaseConnection(conn);
             return res;
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Protocols;
+﻿using DBPro.Entity;
+using Microsoft.IdentityModel.Protocols;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace DBPro.Database
     
     public class OracleHelper
     {
-        const int IMG_MAX_SIZE = 102400;
+        //const int IMG_MAX_SIZE = 102400;
 
         public static void createOraParam(PropertyInfo propertyInfo, Dictionary<string, OracleParameter>lo, object val, List<string> key=null, 
              List<string> primaryKey = null, List<string> allMember = null)
@@ -65,6 +66,7 @@ namespace DBPro.Database
             }
             return lo;
         }
+
 
         #region InsertObject(OracleConnection connection,object obj)
         public static bool InsertObject(OracleConnection connection, object obj)
@@ -160,79 +162,6 @@ namespace DBPro.Database
         }
         #endregion
 
-        #region addImgParameter
-        /// <summary>
-        /// 
-        /// </summary>
-
-        /// <returns></returns>
-        public static void addImgParameter(OracleCommand cmd, string path,string paraname)
-        {
-            try
-            {
-                FileStream fs;
-                fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                BinaryReader br = new BinaryReader(fs);
-                Byte[] img=br.ReadBytes(IMG_MAX_SIZE);
-                cmd.Parameters.Add(new OracleParameter(paraname, OracleDbType.Blob));
-                cmd.Parameters[paraname].Value = img;
-            }
-            catch (OracleException E)
-            {
-                throw new Exception(E.Message);
-            }
-        }
-        #endregion
-
-        #region 向数据库里插入图像格式的字段
-        /// <summary>
-        /// 向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
-        /// </summary>
-        /// <param name="strSQL">SQL语句</param>
-        /// <param name="fs">图像字节,数据库的字段类型为image的情况</param>
-        /// <returns>影响的记录数</returns>
-        public static int ExecuteSqlInsertImg(OracleConnection connection, string strSQL, byte[] fs)
-        {
-            try
-            {
-                using (OracleCommand cmd = new OracleCommand(strSQL, connection))
-                {
-                    OracleParameter myParameter = new OracleParameter("@fs", OracleDbType.LongRaw);
-                    myParameter.Value = fs;
-                    cmd.Parameters.Add(myParameter);
-                    int rows = cmd.ExecuteNonQuery();
-                    return rows;
-                }
-            }
-            catch (OracleException E)
-            {
-                throw new Exception(E.Message);
-            }
-        }
-        #endregion
-
-        #region 执行一条计算查询结果语句，返回查询结果
-        /// <summary>
-        /// 执行一条计算查询结果语句，返回查询结果（object）。
-        /// </summary>
-        /// <param name="SQLString">计算查询结果语句</param>
-        /// <returns>查询结果（object）</returns>
-        public static object GetSingle(OracleConnection connection, string SQLString)
-        {
-            try
-            {
-                using (OracleCommand cmd = new OracleCommand(SQLString, connection))
-                {
-                    object obj = cmd.ExecuteScalar();
-                    return ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value))) ? null : obj;
-                }
-            }
-            catch (OracleException e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
-        #endregion
 
         #region OracleDataReader ExecuteReader(OracleConnection , string)
         /// <summary>
@@ -281,34 +210,7 @@ namespace DBPro.Database
         }
         #endregion
 
-        #region object GetSingle(OracleConnection , string, params OracleParameter[] )
-        /// <summary>
-        /// 执行一条计算查询结果语句，返回查询结果（object）。
-        /// </summary>
-        /// <param name="SQLString">计算查询结果语句</param>
-        /// <returns>查询结果（object）</returns>
-        public static object GetSingle(OracleConnection connection, string SQLString, params OracleParameter[] cmdParms)
-        {
-            try
-            {
-                using (OracleCommand cmd = new OracleCommand())
-                {
-                    PrepareCommand(cmd, connection, null, SQLString, cmdParms);
-                    object obj = cmd.ExecuteScalar();
-                    //cmd.Parameters.Clear();
-                    return ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value))) ? null : obj;
-                }
-            }
-            catch (OracleException e)
-            {
-                throw new Exception(e.Message);
-            }
-
-
-        }
-
-        #endregion
-
+ 
         #region OracleDataReader ExecuteReader(OracleConnection , string , params OracleParameter[] )
         /// <summary>
         /// 执行查询语句，返回OracleDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
@@ -503,18 +405,7 @@ namespace DBPro.Database
             strSql.Length -= 3;
 
             return ExecuteSql(connection, strSql.ToString(), op.ToArray()) > 0 ;
-            /*List<string> nor = new List<string>(), norval = new List<string>(), pri = new List<string>(), prival = new List<string>() ;
-            //OracleParameter[] op = getDBMember(obj, nor, pri, null).ToArray();
-            DBAttribute.getDBElement(obj.GetType(), obj, nor, norval, pri, prival);
-            strSql.Append(string.Format("update {0} set ", DBAttribute.getDBTable(obj.GetType())));
-            for(int i=0;i<nor.Count();++i)
-                strSql.Append(string.Format(" {0} = {1} ,", nor[i],norval[i]));
-            --strSql.Length;
-            strSql.Append(" where ");
-            for (int i = 0; i < pri.Count(); ++i)
-                strSql.Append(string.Format(" {0} = {1} AND", pri[i], prival[i]));
-            strSql.Length-=3;
-            return ExecuteSql(connection, strSql.ToString())>0;*/
+
 
         }
         #endregion

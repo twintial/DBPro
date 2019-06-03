@@ -68,7 +68,7 @@ using DBPro.Models;
             WriteLiteral("\r\n<h2>SignUp</h2>\r\n\r\n");
             EndContext();
             BeginContext(65, 3306, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f29eae93f1de4a3b9b9cd3fc66c807f8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19c75bd46e774040a5e500f176162774", async() => {
                 BeginContext(71, 2004, true);
                 WriteLiteral(@"
     <table border=""1"" cellspacing=""1"" cellpadding=""1"" align=""center"" background=""../../动态壁纸/壁纸2/preview.jpg"">
@@ -139,7 +139,7 @@ using DBPro.Models;
                     ");
                 EndContext();
                 BeginContext(2075, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f39cafeabcfd49a489136b5bac8a9942", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c619f23ae5914c73ab9a374d4148804b", async() => {
                     BeginContext(2096, 4, true);
                     WriteLiteral("2000");
                     EndContext();
@@ -161,7 +161,7 @@ using DBPro.Models;
                 WriteLiteral("\r\n                    ");
                 EndContext();
                 BeginContext(2131, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e635a1c1bb44872809c03b87198c928", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce572ac517244c24b7b5ff43bd5160ac", async() => {
                     BeginContext(2152, 4, true);
                     WriteLiteral("2001");
                     EndContext();
@@ -183,7 +183,7 @@ using DBPro.Models;
                 WriteLiteral("\r\n                    ");
                 EndContext();
                 BeginContext(2187, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85fab2002b19460c849b18bbecb74a20", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c381269055304775abe297f52a714770", async() => {
                     BeginContext(2208, 4, true);
                     WriteLiteral("2002");
                     EndContext();
@@ -205,7 +205,7 @@ using DBPro.Models;
                 WriteLiteral("\r\n                    ");
                 EndContext();
                 BeginContext(2243, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0e58bb1d65647848cd732265bff4fe3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eef22618cfa94770a8d7c2b727a1e493", async() => {
                     BeginContext(2264, 4, true);
                     WriteLiteral("2003");
                     EndContext();

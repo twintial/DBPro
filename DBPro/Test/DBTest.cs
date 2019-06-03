@@ -30,6 +30,7 @@ namespace DBPro.Test
             testUser();
             testUserInformation();
             testUserInteraction();
+            testImage();
         }
 
 
@@ -72,6 +73,6 @@ namespace DBPro.Test
         void testUser() { }
         void testUserInformation() { }
         void testUserInteraction() { }
-
+        void testImage() { }
     }
 }
