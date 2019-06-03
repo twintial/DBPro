@@ -1,5 +1,5 @@
 {
-  "ConnectionStrings": "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME = orcl)));User Id=system;Password=990503;"
+  "ConnectionStrings": 
 
 
 }
